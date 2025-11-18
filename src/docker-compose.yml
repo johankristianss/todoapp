@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  # Backend Flask API service
+  backend:
+    image: johan/todo-backend
+    container_name: todo-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - FLASK_ENV=production
+    networks:
+      - todo-network
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/todos')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    restart: unless-stopped
+
+  # Frontend Nginx service
+  frontend:
+    image: johan/todo-frontend
+    container_name: todo-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - todo-network
+    restart: unless-stopped
+
+networks:
+  todo-network:
+    driver: bridge
