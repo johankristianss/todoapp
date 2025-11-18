@@ -29,5 +29,6 @@ environment: Staging
 
 # Ingress configuration
 ingress:
+  class: traefik
   # Use staging for testing before production
   certIssuer: letsencrypt-staging

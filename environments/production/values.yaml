@@ -29,5 +29,6 @@ environment: Production
 
 # Ingress configuration
 ingress:
+  class: traefik
   # Use production issuer for real certificates
   certIssuer: letsencrypt-prod

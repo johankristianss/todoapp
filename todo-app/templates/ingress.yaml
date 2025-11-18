@@ -4,9 +4,13 @@ metadata:
   name: {{ .Values.app.name }}
   annotations:
     cert-manager.io/cluster-issuer: {{ .Values.ingress.certIssuer }}
+    {{- if eq .Values.ingress.class "traefik" }}
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    {{- else }}
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    {{- end }}
 spec:
-  ingressClassName: nginx
+  ingressClassName: {{ .Values.ingress.class | default "traefik" }}
   tls:
   - hosts:
     - {{ .Values.domain }}
