@@ -1,0 +1,33 @@
+# Staging Environment Configuration
+
+app:
+  name: todo
+
+# Backend configuration
+backend:
+  replicas: 2
+  image:
+    repository: johan/todo-backend
+    tag: latest
+  flaskEnv: production
+
+# Frontend configuration
+frontend:
+  replicas: 2
+  image:
+    repository: johan/todo-frontend
+    tag: latest
+
+# Staging domain - change to your assigned domain
+domain: todo-staging.ltu-m7011e-johan.se
+
+# Email for Let's Encrypt certificates
+email: johan.kristiansson@ltu.se
+
+# Environment identifier
+environment: Staging
+
+# Ingress configuration
+ingress:
+  # Use staging for testing before production
+  certIssuer: letsencrypt-staging
