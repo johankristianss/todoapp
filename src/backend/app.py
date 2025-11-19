@@ -157,7 +157,8 @@ def create_todo():
     # Create new todo with unique ID
     new_todo = {
         'id': next_id,
-        'text': data['text'].strip()
+        'text': data['text'].strip(),
+        'category': data.get('category', 'General').strip()
     }
 
     # Add to our in-memory list

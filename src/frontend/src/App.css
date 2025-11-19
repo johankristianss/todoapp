@@ -26,10 +26,12 @@ h1 {
   display: flex;
   gap: 10px;
   margin-bottom: 30px;
+  flex-wrap: wrap;
 }
 
 .todo-input {
-  flex: 1;
+  flex: 2;
+  min-width: 200px;
   padding: 12px 15px;
   border: 2px solid #586e75;
   border-radius: 5px;
@@ -40,6 +42,24 @@ h1 {
 }
 
 .todo-input:focus {
+  outline: none;
+  border-color: #268bd2;
+}
+
+.category-select {
+  flex: 1;
+  min-width: 120px;
+  padding: 12px 15px;
+  border: 2px solid #586e75;
+  border-radius: 5px;
+  font-size: 16px;
+  background: #002b36;
+  color: #839496;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.category-select:focus {
   outline: none;
   border-color: #268bd2;
 }
@@ -94,10 +114,22 @@ h1 {
   }
 }
 
+.todo-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
 .todo-text {
   color: #93a1a1;
   font-size: 16px;
-  flex: 1;
+}
+
+.todo-category {
+  color: #2aa198;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 .todo-id {

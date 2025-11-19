@@ -32,14 +32,14 @@ function App() {
   }
 
   // Add a new todo
-  const addTodo = async (text) => {
+  const addTodo = async (text, category) => {
     try {
       const response = await fetch(API_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ text })
+        body: JSON.stringify({ text, category })
       })
 
       if (!response.ok) {
