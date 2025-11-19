@@ -1,20 +1,21 @@
 .container {
-  background: white;
+  background: #073642;
   border-radius: 10px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
   padding: 40px;
   width: 100%;
   max-width: 500px;
+  border: 1px solid #586e75;
 }
 
 h1 {
-  color: #333;
+  color: #268bd2;
   margin-bottom: 10px;
   text-align: center;
 }
 
 .subtitle {
-  color: #666;
+  color: #839496;
   font-size: 14px;
   text-align: center;
   margin-bottom: 30px;
@@ -30,21 +31,23 @@ h1 {
 .todo-input {
   flex: 1;
   padding: 12px 15px;
-  border: 2px solid #e0e0e0;
+  border: 2px solid #586e75;
   border-radius: 5px;
   font-size: 16px;
   transition: border-color 0.3s;
+  background: #002b36;
+  color: #839496;
 }
 
 .todo-input:focus {
   outline: none;
-  border-color: #667eea;
+  border-color: #268bd2;
 }
 
 .add-button {
   padding: 12px 25px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: #268bd2;
+  color: #fdf6e3;
   border: none;
   border-radius: 5px;
   font-size: 16px;
@@ -55,7 +58,8 @@ h1 {
 
 .add-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 5px 15px rgba(38, 139, 210, 0.4);
+  background: #2aa198;
 }
 
 .add-button:active {
@@ -68,7 +72,7 @@ h1 {
 }
 
 .todo-item {
-  background: #f8f9fa;
+  background: #002b36;
   padding: 15px;
   margin-bottom: 10px;
   border-radius: 5px;
@@ -76,6 +80,7 @@ h1 {
   justify-content: space-between;
   align-items: center;
   animation: slideIn 0.3s ease;
+  border: 1px solid #586e75;
 }
 
 @keyframes slideIn {
@@ -90,21 +95,21 @@ h1 {
 }
 
 .todo-text {
-  color: #333;
+  color: #93a1a1;
   font-size: 16px;
   flex: 1;
 }
 
 .todo-id {
-  color: #999;
+  color: #586e75;
   font-size: 12px;
   margin-right: 10px;
 }
 
 .delete-button {
   padding: 6px 15px;
-  background: #ff4757;
-  color: white;
+  background: #dc322f;
+  color: #fdf6e3;
   border: none;
   border-radius: 4px;
   font-size: 14px;
@@ -113,14 +118,14 @@ h1 {
 }
 
 .delete-button:hover {
-  background: #ff3838;
+  background: #cb4b16;
 }
 
 /* Empty state */
 .empty-state {
   text-align: center;
   padding: 40px 20px;
-  color: #999;
+  color: #586e75;
 }
 
 .empty-state-icon {
@@ -130,18 +135,19 @@ h1 {
 
 /* Error message */
 .error-message {
-  background: #ff4757;
-  color: white;
+  background: #dc322f;
+  color: #fdf6e3;
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 20px;
   text-align: center;
   animation: slideIn 0.3s ease;
+  border: 1px solid #cb4b16;
 }
 
 /* Loading state */
 .loading {
   text-align: center;
   padding: 20px;
-  color: #999;
+  color: #586e75;
 }
