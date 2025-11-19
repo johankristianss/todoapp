@@ -16,3 +16,11 @@ README.md
 # OS files
 .DS_Store
 Thumbs.db
+
+# Node modules and build artifacts
+node_modules
+dist
+.npm
+
+# Old files
+index.html.old
